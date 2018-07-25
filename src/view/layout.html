@@ -18,16 +18,16 @@
 
   <div class="container">
 
-    <div data-ng-repeat="(key, content) in board">
-      <h2>Row</h2>
-      <h3>Key: {{ key }}</h3>
-      <h3>Content: {{ content }}</h3>
-      <div data-ng-repeat="value in content track by $index">
-        {{ value }}<br />
+    <div id="board">
+      <div data-ng-repeat="(key, content) in board">
+        <div class="board-row">
+          <div data-ng-repeat="value in content track by $index">
+            <div class="board-row-cell">
+              {{ value }}
+            </div>
+          </div>
+        </div>
       </div>
-      <br />
-      <br />
-      <br />
     </div>
 
   </div>

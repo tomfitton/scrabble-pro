@@ -11,6 +11,10 @@
   <!-- /build -->
 
   <style>
+    nav#primary-navbar {
+        border-bottom: 1px solid black;
+    }
+
     #board {
       display: inline-block;
       float: left;
@@ -65,10 +69,14 @@
     .word-treble {
       background-color: #f00;
     }
+
+    .inPlay {
+      background-color: #9ba8cc;
+    }
   </style>
 
 </head>
-<body data-ng-controller="ApplicationController">
+<body data-ng-controller="ApplicationController" data-ng-class="{inPlay: isInPlay}">
 
   <!-- build:section components.header -->
   <!-- /build -->

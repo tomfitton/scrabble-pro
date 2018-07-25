@@ -8,6 +8,7 @@ module.exports = function(grunt) { // jshint ignore:line
       },
       "js": {
         "root": "src/js/",
+        "services": "src/js/services/",
         "controllers": "src/js/controllers/"
       }
     },
@@ -30,6 +31,7 @@ module.exports = function(grunt) { // jshint ignore:line
       "dist": {
         "src": [
           directories.src.js.root + "App.js",
+          directories.src.js.services + "ScrabbleService.js",
           directories.src.js.controllers + "Application.js"
         ],
         "dest": directories.build + "<%= pkg.name %>.js"

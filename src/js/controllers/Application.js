@@ -1,5 +1,5 @@
-window.ScrabblePro.controller("ApplicationController", ["$scope", function($scope) {
+window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleService", function($scope, ScrabbleService) {
 
-  $scope.message = "Angular message!";
+  $scope.message = ScrabbleService.getMessage();
 
 }]);

@@ -18,7 +18,15 @@
 
   <div class="container">
 
-
+    <div data-ng-repeat="row in board">
+      <h2>Row</h2>
+      <div data-ng-repeat="cell in row">
+        {{ cell }}<br />
+      </div>
+      <br />
+      <br />
+      <br />
+    </div>
 
   </div>
 

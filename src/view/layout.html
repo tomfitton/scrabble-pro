@@ -29,6 +29,10 @@
       padding: 10px 20px;
     }
 
+    #control-panel #inPlay hr {
+      border: inset;
+    }
+
     .clearfix {
       clear: both;
     }
@@ -104,8 +108,14 @@
         </form>
       </div>
 
-      <div data-ng-show="isInPlay">
-        In Play!
+      <div id="inPlay" data-ng-show="isInPlay">
+        <h2>Game in progress</h2>
+        <hr />
+        <h3><strong>{{ inGamePlayer1 }}</strong>: 0</h3>
+        <hr />
+        <h3><strong>{{ inGamePlayer2 }}</strong>: 0</h3>
+        <hr />
+        Lorem ipsum
       </div>
 
     </div>

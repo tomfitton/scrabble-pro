@@ -56,7 +56,10 @@
       <div class="board-row" data-ng-repeat="(key, content) in board track by $index">
         <div class="board-cell"
           data-ng-repeat="value in content track by $index"
-          data-ng-class="computeClass(value)">
+          data-ng-class="computeClass(value.id)">
+
+          {{ value.description }}
+
         </div>
         <div data-ng-if="{$last}">
           <div style="clear:both"></div>

@@ -1,12 +1,30 @@
 window.ScrabblePro.service("ScrabbleService", [function() {
 
   var cellTypes = {
-    "BLANK": 0,
-    "START": 1,
-    "LETTER_DOUBLE": 2,
-    "LETTER_TRIPLE": 3,
-    "WORD_DOUBLE": 4,
-    "WORD_TRIPLE": 5
+    "BLANK": {
+      "id": 0,
+      "description": ""
+    },
+    "START": {
+      "id": 1,
+      "description": "*"
+    },
+    "LETTER_DOUBLE": {
+      "id": 2,
+      "description": "LD"
+    },
+    "LETTER_TRIPLE": {
+      "id": 3,
+      "description": "LT"
+    },
+    "WORD_DOUBLE": {
+      "id": 4,
+      "description": "WD"
+    },
+    "WORD_TRIPLE": {
+      "id": 5,
+      "description": "WT"
+    }
   };
 
   this.getBoard = function() {

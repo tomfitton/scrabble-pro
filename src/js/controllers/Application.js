@@ -2,9 +2,17 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
 
   $scope.board = ScrabbleService.getBoard();
   $scope.isRegistration = false;
+  $scope.isInPlay = false;
 
   $scope.startGame = function() {
     $scope.isRegistration = true;
+  };
+
+  $scope.initialiseGame = function() {
+    $scope.inGamePlayer1 = $scope.player1;
+    $scope.inGamePlayer2 = $scope.player2;
+    $scope.isRegistration = false;
+    $scope.isInPlay = true;
   };
 
   $scope.computeClass = function(value) {

@@ -87,7 +87,13 @@
     </div>
 
     <div id="control-panel">
-      <button id="start-game">Start game</button>
+
+      <button id="start-game" data-ng-show="!isRegistration" data-ng-click="startGame()">Start game</button>
+
+      <div data-ng-show="isRegistration">
+        Register!
+      </div>
+
     </div>
 
     <div class="clearfix"></div>

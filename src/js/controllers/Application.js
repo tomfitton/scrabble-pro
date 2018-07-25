@@ -1,5 +1,5 @@
 window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleService", function($scope, ScrabbleService) {
 
-  $scope.message = ScrabbleService.getMessage();
+  $scope.board = ScrabbleService.getBoard();
 
 }]);

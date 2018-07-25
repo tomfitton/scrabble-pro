@@ -1,33 +1,41 @@
 window.ScrabblePro.service("ScrabbleService", [function() {
 
-  var frequency = {
-    "A": 9,
-    "B": 2,
-    "C": 2,
-    "D": 4,
-    "E": 12,
-    "F": 2,
-    "G": 3,
-    "H": 2,
-    "I": 9,
-    "J": 1,
-    "K": 1,
-    "L": 4,
-    "M": 2,
-    "N": 6,
-    "O": 8,
-    "P": 2,
-    "Q": 1,
-    "R": 6,
-    "S": 4,
-    "T": 6,
-    "U": 4,
-    "V": 2,
-    "W": 2,
-    "X": 1,
-    "Y": 2,
-    "Z": 1
-  };
+  var frequency = [
+    {"letter": "A", "frequency": 9},
+    {"letter": "B", "frequency": 2},
+    {"letter": "C", "frequency": 2},
+    {"letter": "D", "frequency": 4},
+    {"letter": "E", "frequency": 12},
+    {"letter": "F", "frequency": 2},
+    {"letter": "G", "frequency": 3},
+    {"letter": "H", "frequency": 2},
+    {"letter": "I", "frequency": 9},
+    {"letter": "J", "frequency": 1},
+    {"letter": "K", "frequency": 1},
+    {"letter": "L", "frequency": 4},
+    {"letter": "M", "frequency": 2},
+    {"letter": "N", "frequency": 6},
+    {"letter": "O", "frequency": 8},
+    {"letter": "P", "frequency": 2},
+    {"letter": "Q", "frequency": 1},
+    {"letter": "R", "frequency": 6},
+    {"letter": "S", "frequency": 4},
+    {"letter": "T", "frequency": 6},
+    {"letter": "U", "frequency": 4},
+    {"letter": "V", "frequency": 2},
+    {"letter": "W", "frequency": 2},
+    {"letter": "X", "frequency": 1},
+    {"letter": "Y", "frequency": 2},
+    {"letter": "Z", "frequency": 1},
+    {"letter": undefined, "frequency": 2}
+  ];
+
+  var contiguousAvailableLetters = (function() {
+    var letters = "";
+    for (var i = 0; i < frequency.length; i += 1) {
+      var letter = freq
+    }
+  }());
 
   var cellTypes = {
     "BLANK": {

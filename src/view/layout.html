@@ -11,9 +11,6 @@
   <!-- /build -->
 
   <style>
-    .board-row {
-      width: 600px;
-    }
     .board-row .board-cell {
       float: left;
       height: 40px;
@@ -30,9 +27,14 @@
   <div class="container">
 
     <div id="board">
-      <div class="board-row" data-ng-repeat="(key, content) in board">
-        <div class="board-cell" data-ng-repeat="value in content track by $index">
+      <div class="board-row" data-ng-repeat="(key, content) in board track by $index">
+        <div class="board-cell"
+          data-ng-repeat="value in content track by $index"
+          data-ng-class="{}">
             {{ value }}
+        </div>
+        <div data-ng-if="{$last}">
+          <div style="clear:both"></div>
         </div>
       </div>
     </div>

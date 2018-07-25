@@ -91,7 +91,17 @@
       <button id="start-game" data-ng-show="!isRegistration" data-ng-click="startGame()">Start game</button>
 
       <div data-ng-show="isRegistration">
-        Register!
+        <form>
+          <div class="form-group">
+            <label for="player1">Player 1</label>
+            <input type="text" class="form-control" id="player1" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="player2">Player 2</label>
+            <input type="text" class="form-control" id="player2" placeholder="Name" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
 
     </div>

@@ -14,11 +14,43 @@ window.ScrabblePro.service("ScrabbleService", [function() {
   };
 
   function getRowA() {
-
+    return [
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0]
+    ];
   }
 
   function getRowB() {
-
+    return [
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0],
+      cellTypes[1],
+      cellTypes[0]
+    ];
   }
 
   function getRowC() {
@@ -91,6 +123,26 @@ window.ScrabblePro.service("ScrabbleService", [function() {
     board.push(getRowN());
     board.push(getRowO());
     return board;
+  };
+
+  this.getBoardConcise = function() {
+    return [
+      [cellTypes["TRIPLE_WORD"], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes["TRIPLE_WORD"], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes["TRIPLE_WORD"]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes["TRIPLE_WORD"], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes["TRIPLE_WORD"]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""]],
+      [cellTypes["TRIPLE_WORD"], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes["TRIPLE_WORD"], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes[""], cellTypes["TRIPLE_WORD"]],
+    ];
   };
 
 }]);

@@ -18,10 +18,12 @@
 
   <div class="container">
 
-    <div data-ng-repeat="row in board">
+    <div data-ng-repeat="(key, content) in board">
       <h2>Row</h2>
-      <div data-ng-repeat="cell in row">
-        {{ cell }}<br />
+      <h3>Key: {{ key }}</h3>
+      <h3>Content: {{ content }}</h3>
+      <div data-ng-repeat="value in content track by $index">
+        {{ value }}<br />
       </div>
       <br />
       <br />

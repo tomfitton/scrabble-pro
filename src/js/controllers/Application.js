@@ -1,7 +1,6 @@
 window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleService", function($scope, ScrabbleService) {
 
-  var board =  ScrabbleService.getBoard();
-  $scope.board = board;
+  $scope.board = ScrabbleService.getBoard();
   $scope.ongoingGame = false;
   $scope.isInPlay = false;
 
@@ -47,7 +46,10 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     return (playerACharacterLowerCase < playerBCharacterLowerCase);
   }
 
-  $scope.calculateCellClass = function(parentIndex, index, value) {
+  $scope.calculateCellClass = function(rowIndex, columnIndex, value) {
+    if ($scope.board[rowIndex][columnIndex].active) {
+      return "active";
+    }
     if (value === 0) {
       return "blank";
     }
@@ -66,6 +68,14 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     else if (value === 5) {
       return "word-treble";
     }
+  };
+
+  $scope.mouseOverCell = function(rowIndex, columnIndex) {
+    $scope.board[rowIndex][columnIndex].active = true;
+  };
+
+  $scope.mouseLeaveCell = function(rowIndex, columnIndex) {
+    $scope.board[rowIndex][columnIndex].active = false;
   };
 
 }]);

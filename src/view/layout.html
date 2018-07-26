@@ -51,6 +51,10 @@
       font-weight: bold;
     }
 
+    .active {
+      background-color: #000;
+      color: #fff;
+    }
     .blank {
       background-color: #0f0;
     }
@@ -121,7 +125,8 @@
         <div class="board-cell"
           data-ng-repeat="value in content track by $index"
           data-ng-class="calculateCellClass($parent.$index, $index, value.id)"
-          data-ng-mouseover="mousedOver()">
+          data-ng-mouseover="mouseOverCell($parent.$index, $index)",
+          data-ng-mouseleave="mouseLeaveCell($parent.$index, $index)">
 
           {{ value.description }}
 

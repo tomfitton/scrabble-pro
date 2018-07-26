@@ -15,21 +15,21 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     if (isPlayerAFirst(playerACharacter, playerBCharacter)) {
       $scope.playerA = {
         "name": $scope.playerAName,
-        "draw": $scope.playerACharacter
+        "draw": playerACharacter
       };
       $scope.playerB = {
         "name": $scope.playerBName,
-        "draw": $scope.playerBCharacter
+        "draw": playerBCharacter
       };
     }
     else {
       $scope.playerA = {
         "name": $scope.playerBName,
-        "draw": $scope.playerBCharacter
+        "draw": playerBCharacter
       };
       $scope.playerB = {
         "name": $scope.playerAName,
-        "draw": $scope.playerACharacter
+        "draw": playerACharacter
       };
     }
     $scope.playerRegistration = false;

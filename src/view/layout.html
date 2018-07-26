@@ -99,6 +99,10 @@
       border: 1px solid black;
       padding: 10px;
     }
+
+    .inPlay table tr.control {
+      background-color: gold;
+    }
   </style>
 
 </head>
@@ -152,12 +156,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-class="{ control: playerA.control }">
               <td>{{ playerA.name }}</td>
               <td>{{ playerA.draw }}</td>
               <td>0</td>
             </tr>
-            <tr>
+            <tr data-ng-class="{ control: playerB.control }">
               <td>{{ playerB.name }}</td>
               <td>{{ playerB.draw }}</td>
               <td>0</td>
@@ -166,6 +170,10 @@
         </table>
       </div>
 
+    </div>
+
+    <div class="letter-status">
+      Hi
     </div>
 
     <div class="clearfix"></div>

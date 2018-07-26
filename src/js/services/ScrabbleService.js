@@ -44,12 +44,8 @@ window.ScrabblePro.service("ScrabbleService", [function() {
 
   this.drawRandomLetter = function() {
     var startSequence = lettersInStringSequence;
-    console.log("start sequence: " + startSequence);
-    console.log("start sequence length: " + startSequence.length);
     var randomNumber = Math.floor(Math.random() * startSequence.length);
-    console.log("random number is: " + randomNumber);
     var randomLetter = startSequence[randomNumber];
-    console.log("random letter is: " + randomLetter);
     return randomLetter;
   };
 

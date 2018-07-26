@@ -46,7 +46,7 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     return (playerACharacterLowerCase < playerBCharacterLowerCase);
   }
 
-  $scope.calculateCellClass = function(value) {
+  $scope.calculateCellClass = function(parentIndex, index, value) {
     if (value == 0) {
       return "blank";
     }

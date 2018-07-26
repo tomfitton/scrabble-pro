@@ -1,6 +1,6 @@
 window.ScrabblePro.service("ScrabbleService", [function() {
 
-  var frequency = [
+  var letters = [
     {"letter": "A", "frequency": 9},
     {"letter": "B", "frequency": 2},
     {"letter": "C", "frequency": 2},
@@ -30,12 +30,11 @@ window.ScrabblePro.service("ScrabbleService", [function() {
     {"letter": undefined, "frequency": 2}
   ];
 
-  var contiguousAvailableLetters = (function() {
-    var letters = "";
-    for (var i = 0; i < frequency.length; i += 1) {
-      var letter = freq
-    }
-  }());
+  function drawRandomLetter() {
+    var numberOfAvailableLetters = letters.length;
+    var randomNumber = Math.floor(Math.random() * numberOfAvailableLetters);
+    return letters[randomNumber].letter;
+  }
 
   var cellTypes = {
     "BLANK": {

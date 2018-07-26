@@ -1,6 +1,11 @@
 window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleService", function($scope, ScrabbleService) {
 
-  $scope.board = ScrabbleService.getBoard();
+  console.log("Loading board");
+  var board =  ScrabbleService.getBoard();
+  //console.log("board A: ", board);
+  $scope.board = board;
+  $scope.board[0][0].disabled = true;
+  //console.log("board B: ", $scope.board);
   $scope.ongoingGame = false;
   $scope.isInPlay = false;
 
@@ -47,6 +52,13 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
   }
 
   $scope.calculateCellClass = function(parentIndex, index, value) {
+    //console.log("Parent index: " + parentIndex);
+    //console.log("Index: " + index);
+    if ($scope.board[parentIndex][index].disabled) {
+      //console.log("Inside: " + parentIndex + ", " + index);
+      //console.log("HERE:: ", $scope.board);
+      return "black";
+    }
     if (value == 0) {
       return "blank";
     }

@@ -53,50 +53,62 @@ window.ScrabblePro.service("ScrabbleService", [function() {
     return randomLetter;
   };
 
-  var cellTypes = {
-    "BLANK": {
-      "id": 0,
-      "description": ""
-    },
-    "START": {
-      "id": 1,
-      "description": "*"
-    },
-    "LETTER_DOUBLE": {
-      "id": 2,
-      "description": "LD"
-    },
-    "LETTER_TRIPLE": {
-      "id": 3,
-      "description": "LT"
-    },
-    "WORD_DOUBLE": {
-      "id": 4,
-      "description": "WD"
-    },
-    "WORD_TRIPLE": {
-      "id": 5,
-      "description": "WT"
+  function getCellType(name) {
+    if (name === "BLANK") {
+      return {
+        "id": 0,
+        "description": ""
+      };
     }
-  };
+    else if (name === "START") {
+      return {
+        "id": 1,
+        "description": "*"
+      };
+    }
+    else if (name === "LETTER_DOUBLE") {
+      return {
+        "id": 2,
+        "description": "LD"
+      };
+    }
+    else if (name === "LETTER_TRIPLE") {
+      return {
+        "id": 2,
+        "description": "LT"
+      };
+    }
+    else if (name === "WORD_DOUBLE") {
+      return {
+        "id": 4,
+        "description": "WD"
+      };
+    }
+    else if (name === "WORD_TRIPLE") {
+      return {
+        "id": 5,
+        "description": "WT"
+      };
+    }
+  }
 
   this.getBoard = function() {
     return [
-      [cellTypes["WORD_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_TRIPLE"]],
-      [cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["WORD_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["START"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_TRIPLE"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"]],
-      [cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"]],
-      [cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_DOUBLE"], cellTypes["BLANK"]],
-      [cellTypes["WORD_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_TRIPLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["LETTER_DOUBLE"], cellTypes["BLANK"], cellTypes["BLANK"], cellTypes["WORD_TRIPLE"]],
+      [getCellType("WORD_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_TRIPLE")],
+      [getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("WORD_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("START"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_TRIPLE")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE")],
+      [getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK")],
+      [getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_DOUBLE"), getCellType("BLANK")],
+      [getCellType("WORD_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_TRIPLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("BLANK"), getCellType("LETTER_DOUBLE"), getCellType("BLANK"), getCellType("BLANK"), getCellType("WORD_TRIPLE")],
     ];
   };
 

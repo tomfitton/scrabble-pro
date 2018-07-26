@@ -10,7 +10,9 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
 
   $scope.initialiseGame = function() {
     $scope.inGamePlayer1 = $scope.player1;
+    console.log("Random letter 1: " + ScrabbleService.drawRandomLetter());
     $scope.inGamePlayer2 = $scope.player2;
+    console.log("Random letter 1: " + ScrabbleService.drawRandomLetter());
     $scope.isRegistration = false;
     $scope.isInPlay = true;
   };

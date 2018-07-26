@@ -33,17 +33,18 @@ window.ScrabblePro.service("ScrabbleService", [function() {
   var lettersInStringSequence = (function() {
     var lettersStringSequence = "";
     for (var i = 0; i < letters.length; i+= 1) {
-      var str = letters[i].letter.repeat(letters[i].frequency);
-      console.log(i + ": " + str);
-      console.log("Total: " + lettersStringSequence);
-      lettersStringSequence += str;
+      lettersStringSequence += letters[i].letter.repeat(letters[i].frequency);
     }
     return lettersStringSequence;
   }());
 
-  function drawRandomLetter() {
-
-  }
+  this.drawRandomLetter = function() {
+    var startSequence = lettersInStringSequence;
+    console.log("start sequence, check in size: " + startSequence.length);
+    var randomNumber = Math.floor(Math.random() * startSequence.length);
+    console.log("random number is: " + randomNumber);
+    return startSequence[randomNumber];
+  };
 
   var cellTypes = {
     "BLANK": {

@@ -76,6 +76,10 @@
     .black {
       background-color: #000;
     }
+    .focus {
+      background-color: #666;
+      color: #fff;
+    }
 
     .inPlay {
       background-color: #9ba8cc;
@@ -126,7 +130,8 @@
           data-ng-repeat="value in content track by $index"
           data-ng-class="calculateCellClass($parent.$index, $index, value.id)"
           data-ng-mouseover="mouseOverCell($parent.$index, $index)",
-          data-ng-mouseleave="mouseLeaveCell($parent.$index, $index)">
+          data-ng-mouseleave="mouseLeaveCell($parent.$index, $index)"
+          data-ng-click="clickCell($parent.$index, $index)">
 
           {{ value.description }}
 

@@ -86,4 +86,13 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     }
   };
 
+  $scope.clickCell = function(rowIndex, columnIndex) {
+    if (isGameOngoing()) {
+      var cell = $scope.board[rowIndex][columnIndex];
+      if (cell.content === undefined) {
+        cell.focus = true;
+      }
+    }
+  };
+
 }]);

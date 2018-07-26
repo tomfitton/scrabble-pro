@@ -117,8 +117,27 @@
       </div>
 
       <div id="inPlay" data-ng-show="isInPlay">
-        <h3><strong>{{ playerA.name }}: {{ playerA.draw }}</strong>: X</h3>
-        <h3><strong>{{ playerB.name }}: {{ playerB.draw }}</strong>: Y</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Draw</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ playerA.name }}</td>
+              <td>{{ playerA.draw }}</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>{{ playerB.name }}</td>
+              <td>{{ playerB.draw }}</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>

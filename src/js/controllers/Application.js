@@ -40,6 +40,10 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     $scope.isInPlay = true;
   };
 
+  $scope.actionMouseover = function(index, parentIndex) {
+    console.log("Mouseover: " + index + " - " + parentIndex);
+  };
+
   function isPlayerAFirst(playerACharacter, playerBCharacter) {
     var playerACharacterLowerCase = playerACharacter.toLowerCase();
     var playerBCharacterLowerCase = playerBCharacter.toLowerCase();

@@ -1,21 +1,32 @@
 window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleService", function($scope, ScrabbleService) {
 
   $scope.board = ScrabbleService.getBoard();
-  $scope.isRegistration = false;
+  $scope.ongoingGame = false;
   $scope.isInPlay = false;
 
   $scope.startGame = function() {
-    $scope.isRegistration = true;
+    $scope.ongoingGame = true;
+    $scope.playerRegistration = true;
   };
 
-  $scope.initialiseGame = function() {
-    $scope.inGamePlayer1 = $scope.player1;
-    console.log("Random letter 1: " + ScrabbleService.drawRandomLetter());
-    $scope.inGamePlayer2 = $scope.player2;
-    console.log("Random letter 1: " + ScrabbleService.drawRandomLetter());
-    $scope.isRegistration = false;
+  $scope.commenceConfiguredGame = function() {
+    var playerA = $scope.playerA;
+    var playerB = $scope.playerB;
+    var playerACharacter = ScrabbleService.drawRandomLetter();
+    var playerBCharacter = ScrabbleService.drawRandomLetter();
+    if (!isPlayerAFirst(playerACharacter, playerBCharacter)) {
+      $scope.playerB = playerA;
+      $scope.playerA = playerB;
+    }
+    $scope.playerRegistration = false;
     $scope.isInPlay = true;
   };
+
+  function isPlayerAFirst(playerACharacter, playerBCharacter) {
+    var playerACharacterLowerCase = playerACharacter.toLowerCase();
+    var playerBCharacterLowerCase = playerBCharacter.toLowerCase();
+    return (playerACharacterLowerCase < playerBCharacterLowerCase);
+  }
 
   $scope.computeClass = function(value) {
     if (value == 0) {

@@ -44,10 +44,13 @@ window.ScrabblePro.service("ScrabbleService", [function() {
 
   this.drawRandomLetter = function() {
     var startSequence = lettersInStringSequence;
-    console.log("start sequence, check in size: " + startSequence.length);
+    console.log("start sequence: " + startSequence);
+    console.log("start sequence length: " + startSequence.length);
     var randomNumber = Math.floor(Math.random() * startSequence.length);
     console.log("random number is: " + randomNumber);
-    return startSequence[randomNumber];
+    var randomLetter = startSequence[randomNumber];
+    console.log("random letter is: " + randomLetter);
+    return randomLetter;
   };
 
   var cellTypes = {

@@ -33,7 +33,11 @@ window.ScrabblePro.service("ScrabbleService", [function() {
   var lettersInStringSequence = (function() {
     var lettersStringSequence = "";
     for (var i = 0; i < letters.length; i+= 1) {
-      lettersStringSequence += letters[i].letter.repeat(letters[i].frequency);
+      var letterDetails = letters[i];
+      // undefined means a blank square, so it's a pseudo-valid "letter"
+      if (letterDetails.letter !== undefined) {
+        lettersStringSequence += letterDetails.letter.repeat(letterDetails.frequency);
+      }
     }
     return lettersStringSequence;
   }());

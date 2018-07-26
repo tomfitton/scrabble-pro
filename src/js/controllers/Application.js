@@ -40,17 +40,13 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     $scope.isInPlay = true;
   };
 
-  $scope.actionMouseover = function(index, parentIndex) {
-    console.log("Mouseover: " + index + " - " + parentIndex);
-  };
-
   function isPlayerAFirst(playerACharacter, playerBCharacter) {
     var playerACharacterLowerCase = playerACharacter.toLowerCase();
     var playerBCharacterLowerCase = playerBCharacter.toLowerCase();
     return (playerACharacterLowerCase < playerBCharacterLowerCase);
   }
 
-  $scope.computeClass = function(value) {
+  $scope.calculateCellClass = function(value) {
     if (value == 0) {
       return "blank";
     }

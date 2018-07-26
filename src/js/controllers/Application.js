@@ -4,6 +4,10 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
   $scope.ongoingGame = false;
   $scope.isInPlay = false;
 
+  function isGameOngoing() {
+    return $scope.isInPlay;
+  }
+
   $scope.startGame = function() {
     $scope.ongoingGame = true;
     $scope.playerRegistration = true;
@@ -71,11 +75,15 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
   };
 
   $scope.mouseOverCell = function(rowIndex, columnIndex) {
-    $scope.board[rowIndex][columnIndex].active = true;
+    if (isGameOngoing()) {
+      $scope.board[rowIndex][columnIndex].active = true;
+    }
   };
 
   $scope.mouseLeaveCell = function(rowIndex, columnIndex) {
-    $scope.board[rowIndex][columnIndex].active = false;
+    if (isGameOngoing()) {
+      $scope.board[rowIndex][columnIndex].active = false;
+    }
   };
 
 }]);

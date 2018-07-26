@@ -10,13 +10,27 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
   };
 
   $scope.commenceConfiguredGame = function() {
-    var playerA = $scope.playerA;
-    var playerB = $scope.playerB;
     var playerACharacter = ScrabbleService.drawRandomLetter();
     var playerBCharacter = ScrabbleService.drawRandomLetter();
-    if (!isPlayerAFirst(playerACharacter, playerBCharacter)) {
-      $scope.playerB = playerA;
-      $scope.playerA = playerB;
+    if (isPlayerAFirst(playerACharacter, playerBCharacter)) {
+      $scope.playerA = {
+        "name": $scope.playerAName,
+        "draw": $scope.playerACharacter
+      };
+      $scope.playerB = {
+        "name": $scope.playerBName,
+        "draw": $scope.playerBCharacter
+      };
+    }
+    else {
+      $scope.playerA = {
+        "name": $scope.playerBName,
+        "draw": $scope.playerBCharacter
+      };
+      $scope.playerB = {
+        "name": $scope.playerAName,
+        "draw": $scope.playerACharacter
+      };
     }
     $scope.playerRegistration = false;
     $scope.isInPlay = true;

@@ -105,12 +105,12 @@
       <div data-ng-show="playerRegistration">
         <form data-ng-submit="commenceConfiguredGame()">
           <div class="form-group">
-            <label for="playerA">Player</label>
-            <input type="text" class="form-control" data-ng-model="playerA" id="player1" placeholder="Name" />
+            <label for="playerAName">Player</label>
+            <input type="text" class="form-control" data-ng-model="playerAName" id="playerA" placeholder="Name" />
           </div>
           <div class="form-group">
-            <label for="playerB">Player</label>
-            <input type="text" class="form-control" data-ng-model="playerB" id="player2" placeholder="Name" />
+            <label for="playerBName">Player</label>
+            <input type="text" class="form-control" data-ng-model="playerBName" id="playerB" placeholder="Name" />
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -119,9 +119,9 @@
       <div id="inPlay" data-ng-show="isInPlay">
         <h2>Game in progress</h2>
         <hr />
-        <h3><strong>{{ playerA }}</strong>: X</h3>
+        <h3><strong>{{ playerA.name }}: {{ playerA.draw }}</strong>: X</h3>
         <hr />
-        <h3><strong>{{ playerB }}</strong>: Y</h3>
+        <h3><strong>{{ playerB.name }}: {{ playerB.draw }}</strong>: Y</h3>
         <hr />
         Lorem ipsum
       </div>

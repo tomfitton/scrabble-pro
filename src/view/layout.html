@@ -77,11 +77,22 @@
     .inPlay table {
       background-color: #fff;
       font-weight: bold;
-      width: 400px;
     }
 
     .inPlay table thead {
       background-color: #ddd;
+    }
+
+    .inPlay table thead th.name {
+      width: 100px;
+    }
+
+    .inPlay table thead th.draw {
+      width: 30px;
+    }
+
+    .inPlay table thead th.score {
+      width: 50px;
     }
 
     .inPlay table th, .inPlay table td {
@@ -135,9 +146,9 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Draw</th>
-              <th>Score</th>
+              <th class="name">Name</th>
+              <th class="draw">Draw</th>
+              <th class="score">Score</th>
             </tr>
           </thead>
           <tbody>

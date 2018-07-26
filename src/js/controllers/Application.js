@@ -51,6 +51,9 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
   }
 
   $scope.calculateCellClass = function(rowIndex, columnIndex, value) {
+    if ($scope.board[rowIndex][columnIndex].focused) {
+      return "focused";
+    }
     if ($scope.board[rowIndex][columnIndex].active) {
       return "active";
     }
@@ -90,7 +93,7 @@ window.ScrabblePro.controller("ApplicationController", ["$scope", "ScrabbleServi
     if (isGameOngoing()) {
       var cell = $scope.board[rowIndex][columnIndex];
       if (cell.content === undefined) {
-        cell.focus = true;
+        cell.focused = true;
       }
     }
   };
